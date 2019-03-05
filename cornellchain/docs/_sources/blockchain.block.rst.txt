@@ -1,0 +1,7 @@
+blockchain.block module
+========================
+
+.. automodule:: blockchain.block
+    :members:
+    :undoc-members:
+    :show-inheritance:

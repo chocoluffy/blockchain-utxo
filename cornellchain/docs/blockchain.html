@@ -1,0 +1,1077 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>blockchain package &mdash; CornellChain 2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="CornellChain 2 documentation" href="index.html"/>
+        <link rel="prev" title="Welcome to Cornell Chain’s documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CornellChain
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to Cornell Chain’s documentation!</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">blockchain package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-blockchain.block">blockchain.block module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-blockchain.chain">blockchain.chain module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-blockchain.poa_block">blockchain.poa_block module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-blockchain.pow_block">blockchain.pow_block module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-blockchain.test_block">blockchain.test_block module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-blockchain.transaction">blockchain.transaction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-blockchain.util">blockchain.util module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-blockchain">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CornellChain</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>blockchain package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/blockchain.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="blockchain-package">
+<h1>blockchain package<a class="headerlink" href="#blockchain-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-blockchain.block">
+<span id="blockchain-block-module"></span><h2>blockchain.block module<a class="headerlink" href="#module-blockchain.block" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="blockchain.block.Block">
+<em class="property">class </em><code class="descclassname">blockchain.block.</code><code class="descname">Block</code><span class="sig-paren">(</span><em>height</em>, <em>transactions</em>, <em>parent_hash</em>, <em>is_genesis=False</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.block.Block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">abc.ABC</span></code>, <code class="xref py py-class docutils literal"><span class="pre">persistent.Persistent</span></code></p>
+<p>Creates a block template (unsealed).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>height</strong> (<em>int</em>) – height of the block in the chain (# of blocks between block and genesis).</li>
+<li><strong>transactions</strong> (<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal"><span class="pre">Transaction</span></code>) – ordered list of transactions in the block.</li>
+<li><strong>parent_hash</strong> (<em>str</em>) – the hash of the parent block in the blockchain.</li>
+<li><strong>is_genesis</strong> (<em>bool</em><em>, </em><em>optional</em>) – True only if the block is a genesis block.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="blockchain.block.Block.parent_hash">
+<code class="descname">parent_hash</code><a class="headerlink" href="#blockchain.block.Block.parent_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – the hash of the parent block in blockchain.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.block.Block.height">
+<code class="descname">height</code><a class="headerlink" href="#blockchain.block.Block.height" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – height of the block in the chain (# of blocks between block and genesis).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.block.Block.transactions">
+<code class="descname">transactions</code><a class="headerlink" href="#blockchain.block.Block.transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal"><span class="pre">Transaction</span></code> – ordered list of transactions in the block.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.block.Block.timestamp">
+<code class="descname">timestamp</code><a class="headerlink" href="#blockchain.block.Block.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Unix timestamp of the block</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.block.Block.target">
+<code class="descname">target</code><a class="headerlink" href="#blockchain.block.Block.target" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Target value for the block’s seal to be valid (different for each seal mechanism)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.block.Block.is_genesis">
+<code class="descname">is_genesis</code><a class="headerlink" href="#blockchain.block.Block.is_genesis" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool</em> – True only if the block is a genesis block (first block in the chain).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.block.Block.merkle">
+<code class="descname">merkle</code><a class="headerlink" href="#blockchain.block.Block.merkle" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – Merkle hash of the list of transactions in a block, uniquely identifying the list.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.block.Block.seal_data">
+<code class="descname">seal_data</code><a class="headerlink" href="#blockchain.block.Block.seal_data" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Seal data for block (in PoW this is the nonce satisfying the PoW puzzle; in PoA, the signature of the authority”</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.block.Block.hash">
+<code class="descname">hash</code><a class="headerlink" href="#blockchain.block.Block.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – Hex-encoded SHA256^2 hash of the block header (self.header())</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.block.Block.calculate_appropriate_target">
+<code class="descname">calculate_appropriate_target</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.block.Block.calculate_appropriate_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should be implemented by subclasses; calculates correct target to use in block.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.block.Block.calculate_hash">
+<code class="descname">calculate_hash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.block.Block.calculate_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the SHA256^2 hash of the block header.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SHA256^2 hash of self.header()</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.block.Block.calculate_merkle_root">
+<code class="descname">calculate_merkle_root</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.block.Block.calculate_merkle_root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Merkle root hash for a given list of transactions.</p>
+<p>This method is incomplete!  Right now, it only hashes the
+transactions together, which does not enable the same type
+of lite client support a true Merkle hash would.
+You do not need to complete this except for the bonus question.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Merkle hash of the list of transactions in a block, uniquely identifying the list.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.block.Block.get_weight">
+<code class="descname">get_weight</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.block.Block.get_weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should be implemented by subclasses; gives consensus weight of block.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.block.Block.header">
+<code class="descname">header</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.block.Block.header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the full header string of a block after mining (includes the seal).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String representation of the block header.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.block.Block.is_valid">
+<code class="descname">is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.block.Block.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether block is fully valid according to block rules.</p>
+<p>Includes checking for no double spend, that all transactions are valid, that all header fields are correctly
+computed, etc.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if block is valid, False otherwise plus an error or success message.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool, str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.block.Block.seal_is_valid">
+<code class="descname">seal_is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.block.Block.seal_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should be implemented by subclasses; returns True iff the seal_data creates a valid seal on the block.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.block.Block.set_seal_data">
+<code class="descname">set_seal_data</code><span class="sig-paren">(</span><em>seal_data</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.block.Block.set_seal_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds seal data to a block, recomputing the block’s hash for its changed header representation.
+This method should never be called after a block is added to the blockchain!</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>seal_data</strong> (<em>int</em>) – The seal data to set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.block.Block.unsealed_header">
+<code class="descname">unsealed_header</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.block.Block.unsealed_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the header string of a block (the component that is sealed by mining).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String representation of the block header without the seal.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-blockchain.chain">
+<span id="blockchain-chain-module"></span><h2>blockchain.chain module<a class="headerlink" href="#module-blockchain.chain" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="blockchain.chain.Blockchain">
+<em class="property">class </em><code class="descclassname">blockchain.chain.</code><code class="descname">Blockchain</code><a class="headerlink" href="#blockchain.chain.Blockchain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">persistent.Persistent</span></code></p>
+<p>Create a new Blockchain object; we store 1 globally in the database.</p>
+<dl class="attribute">
+<dt id="blockchain.chain.Blockchain.chain">
+<code class="descname">chain</code><a class="headerlink" href="#blockchain.chain.Blockchain.chain" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code> of (int to (<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of str)) – Maps integer chain heights to list of block hashes at that height in the DB (as strings).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.chain.Blockchain.blocks">
+<code class="descname">blocks</code><a class="headerlink" href="#blockchain.chain.Blockchain.blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code> of (str to (<code class="xref py py-obj docutils literal"><span class="pre">Block</span></code>)) – Maps blockhashes to their corresponding Block objects in the DB.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.chain.Blockchain.blocks_spending_input">
+<code class="descname">blocks_spending_input</code><a class="headerlink" href="#blockchain.chain.Blockchain.blocks_spending_input" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code> of (str to (<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of str)) – Maps input references as strings to all blocks in the DB that spent them as list of their hashes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.chain.Blockchain.blocks_containing_tx">
+<code class="descname">blocks_containing_tx</code><a class="headerlink" href="#blockchain.chain.Blockchain.blocks_containing_tx" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code> of (str to (<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of str)) – Maps transaction hashes to all blocks in the DB that spent them as list of their hashes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.chain.Blockchain.all_transactions">
+<code class="descname">all_transactions</code><a class="headerlink" href="#blockchain.chain.Blockchain.all_transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">dict</span></code> of (str to <code class="xref py py-obj docutils literal"><span class="pre">Transaction</span></code>) – Maps transaction hashes to their corresponding Transaction objects.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.chain.Blockchain.add_block">
+<code class="descname">add_block</code><span class="sig-paren">(</span><em>block</em>, <em>save=True</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.chain.Blockchain.add_block" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a block to the blockchain; the block must be valid according to all block rules.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>block</strong> (<code class="xref py py-obj docutils literal"><span class="pre">Block</span></code>) – Block to save to the blockchain</li>
+<li><strong>save</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to commit changes to database (defaults to True)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True on success, False otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.chain.Blockchain.get_all_block_weights">
+<code class="descname">get_all_block_weights</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.chain.Blockchain.get_all_block_weights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get total weight for every block in the blockchain database.
+(eg if a block is at height 3, and all blocks have weight 1, the block will have weight 4 across blocks 0,1,2,3)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><cite>dict</cite> of (str to int)): List mapping every blockhash to its total accumulated weight in the blockchain</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">(obj</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.chain.Blockchain.get_blockhashes_at_height">
+<code class="descname">get_blockhashes_at_height</code><span class="sig-paren">(</span><em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.chain.Blockchain.get_blockhashes_at_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of hashes of blocks at a particular height stored in the chain database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>height</strong> (<em>int</em>) – Desired height to query.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of blockhashes at given height</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of str)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.chain.Blockchain.get_chain_ending_with">
+<code class="descname">get_chain_ending_with</code><span class="sig-paren">(</span><em>block_hash</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.chain.Blockchain.get_chain_ending_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of blockhashes in the chain ending with the provided hash, following parent pointers until genesis</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>block_hash</strong> (<em>str</em>) – Block hash of highest block in desired chain.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of all blocks in the chain between desired block and genesis.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of str)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.chain.Blockchain.get_heaviest_chain_tip">
+<code class="descname">get_heaviest_chain_tip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.chain.Blockchain.get_heaviest_chain_tip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the chain tip with the most accumulated total work.
+Note that if blocks are allowed to have different weights, this
+<strong>may not be the block with the highest height</strong>; we are not allowed
+to assume anything about the weight function other than that it will
+return an int.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">block with the maximum total weight in db.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">(<code class="xref py py-obj docutils literal"><span class="pre">Block</span></code>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.chain.Blockchain.get_heights_with_blocks">
+<code class="descname">get_heights_with_blocks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.chain.Blockchain.get_heights_with_blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all heights in the blockchain that contain blocks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of heights in the blockchain with blocks at that location.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">(<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of int)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-blockchain.poa_block">
+<span id="blockchain-poa-block-module"></span><h2>blockchain.poa_block module<a class="headerlink" href="#module-blockchain.poa_block" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="blockchain.poa_block.PoABlock">
+<em class="property">class </em><code class="descclassname">blockchain.poa_block.</code><code class="descname">PoABlock</code><span class="sig-paren">(</span><em>height</em>, <em>transactions</em>, <em>parent_hash</em>, <em>is_genesis=False</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.poa_block.PoABlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#blockchain.block.Block" title="blockchain.block.Block"><code class="xref py py-class docutils literal"><span class="pre">blockchain.block.Block</span></code></a></p>
+<p>Extends Block, adding proof-of-work primitives.</p>
+<p>Creates a block template (unsealed).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>height</strong> (<em>int</em>) – height of the block in the chain (# of blocks between block and genesis).</li>
+<li><strong>transactions</strong> (<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal"><span class="pre">Transaction</span></code>) – ordered list of transactions in the block.</li>
+<li><strong>parent_hash</strong> (<em>str</em>) – the hash of the parent block in the blockchain.</li>
+<li><strong>is_genesis</strong> (<em>bool</em><em>, </em><em>optional</em>) – True only if the block is a genesis block.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="blockchain.poa_block.PoABlock.parent_hash">
+<code class="descname">parent_hash</code><a class="headerlink" href="#blockchain.poa_block.PoABlock.parent_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – the hash of the parent block in blockchain.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.poa_block.PoABlock.height">
+<code class="descname">height</code><a class="headerlink" href="#blockchain.poa_block.PoABlock.height" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – height of the block in the chain (# of blocks between block and genesis).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.poa_block.PoABlock.transactions">
+<code class="descname">transactions</code><a class="headerlink" href="#blockchain.poa_block.PoABlock.transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal"><span class="pre">Transaction</span></code> – ordered list of transactions in the block.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.poa_block.PoABlock.timestamp">
+<code class="descname">timestamp</code><a class="headerlink" href="#blockchain.poa_block.PoABlock.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Unix timestamp of the block</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.poa_block.PoABlock.target">
+<code class="descname">target</code><a class="headerlink" href="#blockchain.poa_block.PoABlock.target" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Target value for the block’s seal to be valid (different for each seal mechanism)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.poa_block.PoABlock.is_genesis">
+<code class="descname">is_genesis</code><a class="headerlink" href="#blockchain.poa_block.PoABlock.is_genesis" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool</em> – True only if the block is a genesis block (first block in the chain).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.poa_block.PoABlock.merkle">
+<code class="descname">merkle</code><a class="headerlink" href="#blockchain.poa_block.PoABlock.merkle" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – Merkle hash of the list of transactions in a block, uniquely identifying the list.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.poa_block.PoABlock.seal_data">
+<code class="descname">seal_data</code><a class="headerlink" href="#blockchain.poa_block.PoABlock.seal_data" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Seal data for block (in PoW this is the nonce satisfying the PoW puzzle; in PoA, the signature of the authority”</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.poa_block.PoABlock.hash">
+<code class="descname">hash</code><a class="headerlink" href="#blockchain.poa_block.PoABlock.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – Hex-encoded SHA256^2 hash of the block header (self.header())</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.poa_block.PoABlock.calculate_appropriate_target">
+<code class="descname">calculate_appropriate_target</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.poa_block.PoABlock.calculate_appropriate_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Target in PoA is currently meaningless</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.poa_block.PoABlock.get_private_key">
+<code class="descname">get_private_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.poa_block.PoABlock.get_private_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns private key of PoA authority.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.poa_block.PoABlock.get_public_key">
+<code class="descname">get_public_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.poa_block.PoABlock.get_public_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns public key of PoA authority.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.poa_block.PoABlock.get_weight">
+<code class="descname">get_weight</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.poa_block.PoABlock.get_weight" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Gets the approximate total amount of work that has gone into making a block.</dt>
+<dd>The consensus weight of a block is how much harder a block is to mine
+than the easiest possible block, which for PoA is always 1.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The consensus weight of a block.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.poa_block.PoABlock.mine">
+<code class="descname">mine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.poa_block.PoABlock.mine" title="Permalink to this definition">¶</a></dt>
+<dd><p>PoA signer; seals a block with new seal data by signing it, checking that
+signature is valid, and returning.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.poa_block.PoABlock.seal_is_valid">
+<code class="descname">seal_is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.poa_block.PoABlock.seal_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether a block’s seal_data forms a valid seal.
+In PoA, this means that Verif(PK, [block, sig]) = accept.
+(aka the unsealed block header is validly signed under the authority’s public key)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True only if a block’s seal data forms a valid seal according to PoA.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-blockchain.pow_block">
+<span id="blockchain-pow-block-module"></span><h2>blockchain.pow_block module<a class="headerlink" href="#module-blockchain.pow_block" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="blockchain.pow_block.PoWBlock">
+<em class="property">class </em><code class="descclassname">blockchain.pow_block.</code><code class="descname">PoWBlock</code><span class="sig-paren">(</span><em>height</em>, <em>transactions</em>, <em>parent_hash</em>, <em>is_genesis=False</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.pow_block.PoWBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#blockchain.block.Block" title="blockchain.block.Block"><code class="xref py py-class docutils literal"><span class="pre">blockchain.block.Block</span></code></a></p>
+<p>Extends Block, adding proof-of-work primitives.</p>
+<p>Creates a block template (unsealed).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>height</strong> (<em>int</em>) – height of the block in the chain (# of blocks between block and genesis).</li>
+<li><strong>transactions</strong> (<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal"><span class="pre">Transaction</span></code>) – ordered list of transactions in the block.</li>
+<li><strong>parent_hash</strong> (<em>str</em>) – the hash of the parent block in the blockchain.</li>
+<li><strong>is_genesis</strong> (<em>bool</em><em>, </em><em>optional</em>) – True only if the block is a genesis block.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="blockchain.pow_block.PoWBlock.parent_hash">
+<code class="descname">parent_hash</code><a class="headerlink" href="#blockchain.pow_block.PoWBlock.parent_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – the hash of the parent block in blockchain.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.pow_block.PoWBlock.height">
+<code class="descname">height</code><a class="headerlink" href="#blockchain.pow_block.PoWBlock.height" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – height of the block in the chain (# of blocks between block and genesis).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.pow_block.PoWBlock.transactions">
+<code class="descname">transactions</code><a class="headerlink" href="#blockchain.pow_block.PoWBlock.transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal"><span class="pre">Transaction</span></code> – ordered list of transactions in the block.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.pow_block.PoWBlock.timestamp">
+<code class="descname">timestamp</code><a class="headerlink" href="#blockchain.pow_block.PoWBlock.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Unix timestamp of the block</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.pow_block.PoWBlock.target">
+<code class="descname">target</code><a class="headerlink" href="#blockchain.pow_block.PoWBlock.target" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Target value for the block’s seal to be valid (different for each seal mechanism)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.pow_block.PoWBlock.is_genesis">
+<code class="descname">is_genesis</code><a class="headerlink" href="#blockchain.pow_block.PoWBlock.is_genesis" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool</em> – True only if the block is a genesis block (first block in the chain).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.pow_block.PoWBlock.merkle">
+<code class="descname">merkle</code><a class="headerlink" href="#blockchain.pow_block.PoWBlock.merkle" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – Merkle hash of the list of transactions in a block, uniquely identifying the list.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.pow_block.PoWBlock.seal_data">
+<code class="descname">seal_data</code><a class="headerlink" href="#blockchain.pow_block.PoWBlock.seal_data" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Seal data for block (in PoW this is the nonce satisfying the PoW puzzle; in PoA, the signature of the authority”</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.pow_block.PoWBlock.hash">
+<code class="descname">hash</code><a class="headerlink" href="#blockchain.pow_block.PoWBlock.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – Hex-encoded SHA256^2 hash of the block header (self.header())</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.pow_block.PoWBlock.calculate_appropriate_target">
+<code class="descname">calculate_appropriate_target</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.pow_block.PoWBlock.calculate_appropriate_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>For simplicity, we will just keep a constant target / difficulty
+for now; in real cryptocurrencies, the target adjusts based on some
+formula based on the parent’s target, and the difference in timestamps
+between blocks  indicating mining is too slow or quick.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.pow_block.PoWBlock.get_weight">
+<code class="descname">get_weight</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.pow_block.PoWBlock.get_weight" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Gets the approximate total amount of work that has gone into making a block.</dt>
+<dd>The consensus weight of a block is how much harder a block is to mine
+than the easiest possible block, with a target of 2^256.
+e.g. a block with weight 4 will take 4 times longer on expectation to mine than
+a block carrying target 2^256.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The consensus weight of a block.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.pow_block.PoWBlock.mine">
+<code class="descname">mine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.pow_block.PoWBlock.mine" title="Permalink to this definition">¶</a></dt>
+<dd><p>PoW mining loop; attempts to seal a block with new seal data until the seal is valid
+(performing brute-force mining).  Terminates once block is valid.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.pow_block.PoWBlock.seal_is_valid">
+<code class="descname">seal_is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.pow_block.PoWBlock.seal_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether a block’s seal_data forms a valid seal.
+In PoW, this means that H(block) &lt;= target</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True only if a block’s seal data forms a valid seal according to PoW.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-blockchain.test_block">
+<span id="blockchain-test-block-module"></span><h2>blockchain.test_block module<a class="headerlink" href="#module-blockchain.test_block" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="blockchain.test_block.TestBlock">
+<em class="property">class </em><code class="descclassname">blockchain.test_block.</code><code class="descname">TestBlock</code><span class="sig-paren">(</span><em>height</em>, <em>transactions</em>, <em>parent_hash</em>, <em>is_genesis=False</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.test_block.TestBlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#blockchain.pow_block.PoWBlock" title="blockchain.pow_block.PoWBlock"><code class="xref py py-class docutils literal"><span class="pre">blockchain.pow_block.PoWBlock</span></code></a></p>
+<p>A test block is just a PoW block that is always valid;
+use if you need to to test e.g. block validity features.</p>
+<p>Creates a block template (unsealed).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>height</strong> (<em>int</em>) – height of the block in the chain (# of blocks between block and genesis).</li>
+<li><strong>transactions</strong> (<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal"><span class="pre">Transaction</span></code>) – ordered list of transactions in the block.</li>
+<li><strong>parent_hash</strong> (<em>str</em>) – the hash of the parent block in the blockchain.</li>
+<li><strong>is_genesis</strong> (<em>bool</em><em>, </em><em>optional</em>) – True only if the block is a genesis block.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="blockchain.test_block.TestBlock.parent_hash">
+<code class="descname">parent_hash</code><a class="headerlink" href="#blockchain.test_block.TestBlock.parent_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – the hash of the parent block in blockchain.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.test_block.TestBlock.height">
+<code class="descname">height</code><a class="headerlink" href="#blockchain.test_block.TestBlock.height" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – height of the block in the chain (# of blocks between block and genesis).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.test_block.TestBlock.transactions">
+<code class="descname">transactions</code><a class="headerlink" href="#blockchain.test_block.TestBlock.transactions" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal"><span class="pre">Transaction</span></code> – ordered list of transactions in the block.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.test_block.TestBlock.timestamp">
+<code class="descname">timestamp</code><a class="headerlink" href="#blockchain.test_block.TestBlock.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Unix timestamp of the block</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.test_block.TestBlock.target">
+<code class="descname">target</code><a class="headerlink" href="#blockchain.test_block.TestBlock.target" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Target value for the block’s seal to be valid (different for each seal mechanism)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.test_block.TestBlock.is_genesis">
+<code class="descname">is_genesis</code><a class="headerlink" href="#blockchain.test_block.TestBlock.is_genesis" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool</em> – True only if the block is a genesis block (first block in the chain).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.test_block.TestBlock.merkle">
+<code class="descname">merkle</code><a class="headerlink" href="#blockchain.test_block.TestBlock.merkle" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – Merkle hash of the list of transactions in a block, uniquely identifying the list.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.test_block.TestBlock.seal_data">
+<code class="descname">seal_data</code><a class="headerlink" href="#blockchain.test_block.TestBlock.seal_data" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Seal data for block (in PoW this is the nonce satisfying the PoW puzzle; in PoA, the signature of the authority”</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="blockchain.test_block.TestBlock.hash">
+<code class="descname">hash</code><a class="headerlink" href="#blockchain.test_block.TestBlock.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> – Hex-encoded SHA256^2 hash of the block header (self.header())</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.test_block.TestBlock.is_valid">
+<code class="descname">is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.test_block.TestBlock.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-blockchain.transaction">
+<span id="blockchain-transaction-module"></span><h2>blockchain.transaction module<a class="headerlink" href="#module-blockchain.transaction" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="blockchain.transaction.Transaction">
+<em class="property">class </em><code class="descclassname">blockchain.transaction.</code><code class="descname">Transaction</code><span class="sig-paren">(</span><em>input_refs</em>, <em>outputs</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.transaction.Transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">persistent.Persistent</span></code></p>
+<p>Class representing a transaction output in the UTXO model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sender</strong> (<em>str</em>) – Account sending (creating) the output.</li>
+<li><strong>receiver</strong> (<em>str</em>) – Account receiving (and later potentially spending) the output.</li>
+<li><strong>amount</strong> (<em>int</em>) – Amount being transferred.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="blockchain.transaction.Transaction.calculate_hash">
+<code class="descname">calculate_hash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.transaction.Transaction.calculate_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the hash of the block header.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">SHA256^2 hash of the block header.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.transaction.Transaction.header">
+<code class="descname">header</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.transaction.Transaction.header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get string encoding of a transaction’s header.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="blockchain.transaction.Transaction.is_valid">
+<code class="descname">is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.transaction.Transaction.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a transaction is well-formed, returning True iff a transaction obeys syntactic rules.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="blockchain.transaction.TransactionOutput">
+<em class="property">class </em><code class="descclassname">blockchain.transaction.</code><code class="descname">TransactionOutput</code><span class="sig-paren">(</span><em>sender</em>, <em>receiver</em>, <em>amount</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.transaction.TransactionOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">persistent.Persistent</span></code></p>
+<p>Class representing a transaction output in the UTXO model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sender</strong> (<em>str</em>) – Account sending (creating) the output.</li>
+<li><strong>receiver</strong> (<em>str</em>) – Account receiving (and later potentially spending) the output.</li>
+<li><strong>amount</strong> (<em>int</em>) – Amount being transferred.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-blockchain.util">
+<span id="blockchain-util-module"></span><h2>blockchain.util module<a class="headerlink" href="#module-blockchain.util" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="blockchain.util.encode_as_str">
+<code class="descclassname">blockchain.util.</code><code class="descname">encode_as_str</code><span class="sig-paren">(</span><em>list_to_encode</em>, <em>sep='|'</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.util.encode_as_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encodes a list as a string with given separator.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>list_to_encode</strong> (<code class="xref py py-obj docutils literal"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal"><span class="pre">Object</span></code>) – List of objects to convert to strings.</li>
+<li><strong>sep</strong> (<em>str</em><em>, </em><em>optional</em>) – Separator to join objects with.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="blockchain.util.nonempty_intersection">
+<code class="descclassname">blockchain.util.</code><code class="descname">nonempty_intersection</code><span class="sig-paren">(</span><em>list1</em>, <em>list2</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.util.nonempty_intersection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true iff two lists have a nonempty intersection.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blockchain.util.sha256_2_string">
+<code class="descclassname">blockchain.util.</code><code class="descname">sha256_2_string</code><span class="sig-paren">(</span><em>string_to_hash</em><span class="sig-paren">)</span><a class="headerlink" href="#blockchain.util.sha256_2_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the SHA256^2 hash of a given string input
+in hexadecimal format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>string_to_hash</strong> (<em>str</em>) – Input string to hash twice</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Output of double-SHA256 encoded as hexadecimal string.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-blockchain">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-blockchain" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to Cornell Chain’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, CS5433 Course Staff, Cornell Tech.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

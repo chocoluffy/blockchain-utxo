@@ -1,0 +1,38 @@
+<html>
+<head>
+<script src="static/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h2 style="text-align:center;"><img src="static/cornellcoin.jpg" style="width:200px;"/><div style="display: inline; padding-bottom: 150px; vertical-align: middle;"><b>CornellCoin</b> Blockchain Explorer</div><img src="static/cornellcoin.jpg" style="width:200px;"/></h2>
+<h3 style="text-align: center;"> Views: <a href="/">All blocks</a> | <a href="/best">Best chain only</a></h3><br><br>
+
+{% for block_hash in block_hashes%}
+        {% set block = chain.blocks[block_hash] %}
+        Block ID <pre style="display:inline;">{{ block.hash }}</pre>: <small>
+            <a href="" onclick="$('#txs-{{ block.hash }}').toggle('fast'); return false;">[ toggle transactions ]</a> </small> <br>
+        {% if block.is_genesis %}
+            <b> GENESIS BLOCK | </b>
+        {% endif %}
+        <b> Height</b>: {{ block.height }}
+        <b> Transactions</b>: {{ block.transactions|length }}
+        <b> Valid</b>: {{ block.is_valid() }}
+        <b> Parent</b>: {{ block.parent_hash }}
+        <b> Timestamp</b>: {{ block.timestamp }}
+        <b> Merkle root</b>: {{ block.merkle }}
+        <b> Seal Data</b>: {{ block.seal_data }}
+        <b> Block Weight / Total Weight</b>: {{ block.get_weight() }} {{ weights[block.hash] }}
+        <pre style="background: lightgrey; padding: 20px; white-space: pre; overflow-x: auto;" id="header-{{ block.hash }}">Header:
+{{ block.header() }}</pre>
+        <pre style="background: lightgrey; padding: 20px; display:none;" id="txs-{{ block.hash }}">Transactions:
+
+{% for tx in block.transactions %}TX {{ tx.hash }}:
+    Inputs
+{% for input in tx.input_refs %}        tx_hash:output_index {{ input }}
+{%endfor%}    Outputs
+{% for output in tx.outputs %}        {{ output.__repr__().replace("~", " to ", 1).replace("~", ", amount ") }}
+{%endfor%}
+{% endfor %}</pre>
+        <br>
+{% endfor %}
+</body>
+</html>

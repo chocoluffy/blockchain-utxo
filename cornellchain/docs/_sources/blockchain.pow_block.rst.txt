@@ -1,0 +1,7 @@
+blockchain.pow_block module
+=============================
+
+.. automodule:: blockchain.pow_block
+    :members:
+    :undoc-members:
+    :show-inheritance:

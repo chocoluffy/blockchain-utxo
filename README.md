@@ -1,0 +1,7 @@
+(1d) - Hybrid Systems
+
+One limitation aounrd proof of authority is that those authorities are pre-defined, and can at any time create new blocks at their own wills instead of like proof of work where miners are racing to mine new blocks. It brings up a chanllege that those currently trusted authorities may collude with each other to attack the system by abusing their fixed authority, and thus poses harm to the network. 
+
+One potential solution is to try to rotate and adapt and list of trusted authority, making use of the round robin mechanism to select new trust authority, or in a even more rigorous mechanism of voting protocol such as Raft protocol that whenever a signer wants to be elected as a trusted signer, it will change its header data by affiliating a messeage of being leader and propagate to its associated clients and clients will decide whether or not to vote for this signer or elect themselves by repeating the process again to its associated clients. By doing that, we undermine the possibility of being an always-trusted authority but instead the trusted signer list can change and adapt and it improves the secutiry of the system.
+
+Another approach is to restrict the trusted signer's minting frequency, for example, we can restrict each trusted signer to only mine 1 out of N/2 (N is the total number of trusted signers), thus it causes that the malicious singer will have to control at least 51% of the signer accounts in order to make attack, which is extremely impossible. 

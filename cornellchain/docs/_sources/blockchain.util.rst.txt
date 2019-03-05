@@ -1,0 +1,7 @@
+blockchain.util module
+=======================
+
+.. automodule:: blockchain.util
+    :members:
+    :undoc-members:
+    :show-inheritance:
