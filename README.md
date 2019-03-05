@@ -1,4 +1,4 @@
-(1d) - Hybrid Systems
+Hybrid Systems
 
 One limitation aounrd proof of authority is that those authorities are pre-defined, and can at any time create new blocks at their own wills instead of like proof of work where miners are racing to mine new blocks. It brings up a chanllege that those currently trusted authorities may collude with each other to attack the system by abusing their fixed authority, and thus poses harm to the network. 
 
